@@ -1,0 +1,37 @@
+<div class="full-width">
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Calculadora Binaria</mat-card-title>
+    <mat-card-subtitle>Teste 2</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form  [formGroup]="formCalculadora">
+      <section class="form">
+        <mat-form-field>
+          <input matInput placeholder="Valor 1" (keydown)="onKeyPressValidator($event)" formControlName="valor1" maxlength="8" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Valor 2" (keydown)="onKeyPressValidator($event)" formControlName="valor2" maxlength="8" required>
+        </mat-form-field>
+      </section>
+      <section class="form">
+        <mat-form-field appearance="fill" >
+          <mat-label>Operação</mat-label>
+          <select matNativeControl required formControlName="operador">
+            <option value="1">Adição</option>
+            <option value="2">Subtração</option>
+            <option value="3">Multiplicação</option>
+            <option value="4">Divisão</option>
+            <option value="5">Porcentagem</option>
+          </select>
+        </mat-form-field>
+      </section>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="calcular()">Calcular</button>
+    <p>Resultado: {{resultado}}</p>
+  </mat-card-actions>
+</mat-card>
+
+</div>
